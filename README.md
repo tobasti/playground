@@ -1,0 +1,3 @@
+# README
+
+This is my playground app, in which I play around with some things I saw on tutorials or the like...
