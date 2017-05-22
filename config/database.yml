@@ -7,8 +7,8 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  port: 5433
-  username: tsw
+  port: 5432
+  username: user01
   pool: 5
   timeout: 5000
 
