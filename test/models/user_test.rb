@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: 'Anton', email: 'Anton.Berger@Circus.de')
+    @user = User.new(name: 'Anton', email: 'Anton.Berger@Circus.de', password: 'kennwort', password_confirmation: 'kennwort')
   end
 
   test "should be valid" do
@@ -61,5 +61,15 @@ class UserTest < ActiveSupport::TestCase
     @user.email = mixed_case_example
     @user.save
     assert_equal mixed_case_example.downcase, @user.reload.email
+  end
+
+  test "password should be present and not blank" do
+    @user.password = @user.password_confirmation = " " * 8
+    assert_not @user.valid?
+  end
+  
+  test "password should be at least 8 characters long" do
+    @user.password = @user.password_confirmation = "c" * 7
+    assert_not @user.valid?
   end
 end
