@@ -2,10 +2,6 @@ require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
 
-  def setup
-    @base_title = 'Playground'
-  end
-
   test "should get help" do
     get help_url
     assert_response :success
