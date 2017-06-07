@@ -2,11 +2,8 @@
 
 # Commented out the automatically created Fixtures to adhere to the indexes 
 # uniqueness constraint
-#
-#one:
-#  name: MyString
-#  email: MyString
-#
-#two:
-#  name: MyString
-#  email: MyString
+
+test_dummy:
+  name: Anna Conda
+  email: ann@con.da
+  password_digest: <%= BCrypt::Password.create("kennword", cost: 4) %>
